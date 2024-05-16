@@ -26,10 +26,15 @@
     <Greet name="Raul"/>
     <Greet name="Cristiano"/>
 
+    
   </div>
+  <button @click="popup=true">Show Popup</button>
+    <Popup   v-show="popup" @close="popup=false" />
+
 </template>
 <script >
 import Greet from './components/Greet.vue';
+import Popup from './components/Popup.vue';
 
 export default{
     name: 'App',
@@ -37,6 +42,7 @@ export default{
         return {
             firstName: 'Rohan',
             lastName: 'George',
+            popup:false,
             volume: 0,
             items: [
                 {
@@ -75,7 +81,7 @@ export default{
             }
         }
     },
-    components: { Greet }
+    components: { Greet, Popup }
 }
 
 </script>
@@ -88,4 +94,7 @@ export default{
   
 }
 
+.popuo{
+  margin: 10rem;
+}
 </style>
